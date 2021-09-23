@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct ToDoItem {
-    let name: String
+struct ToDoItem: Codable {
+    var name: String
     var isCompleted = false
 }
 
@@ -20,10 +20,30 @@ class ToDoTableViewController: UITableViewController {
         dataSource.toDoItems
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        UserDefaults.resetStandardUserDefaults()
+        dataSource.loadData()
+    }
+    
     //method to add item
     @IBAction func pushAddAction(_ sender: Any) {
-        dataSource.addItem(item: ToDoItem(name: "NewRow"))
-        tableView.reloadData()
+        let alertController = UIAlertController(title: "Create new item", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "New Item name"
+        }
+        let alertActionCancel = UIAlertAction(title: "Cancel", style: .default) { alert in
+        }
+        
+        let alertActionCreate = UIAlertAction(title: "Create", style: .default) { alert in
+            let text = alertController.textFields![0].text!
+            self.dataSource.addItem(item: .init(name: text))
+            self.tableView.reloadData()
+        }
+        
+        alertController.addAction(alertActionCancel)
+        alertController.addAction(alertActionCreate)
+        present(alertController, animated: true, completion: nil)
     }
 
 
@@ -38,16 +58,9 @@ class ToDoTableViewController: UITableViewController {
         dataSource.changeState(at: indexPath.row)
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = toDoItems[indexPath.row].isCompleted ? .checkmark : .none
-        
-        saveData()
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
-    
-    func saveData(){
-        print("data saved!")
-    }
-
 }

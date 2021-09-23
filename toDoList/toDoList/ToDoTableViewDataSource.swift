@@ -10,7 +10,11 @@ import UIKit
 
 class ToDoTableViewDataSource: NSObject, UITableViewDataSource {
     
-    var toDoItems = [ToDoItem(name: "Call mommy", isCompleted: true)]
+    var toDoItems = [ToDoItem(name: "base", isCompleted: false)] {
+        didSet {
+            saveData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         toDoItems.count
@@ -29,8 +33,7 @@ class ToDoTableViewDataSource: NSObject, UITableViewDataSource {
     
     func addItem(item: ToDoItem) {
         toDoItems.append(item)
-        
-        
+//        saveData()
     }
 
     //delete element
@@ -59,6 +62,23 @@ class ToDoTableViewDataSource: NSObject, UITableViewDataSource {
             break
         default:
             break
+        }
+    }
+    
+    func saveData(){
+        print("data saved!")
+        UserDefaults.standard.set(try? JSONEncoder().encode(toDoItems), forKey: "ToDoDataKey")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func loadData(){
+        if let data = UserDefaults.standard.data(forKey: "ToDoDataKey"),
+           let array = try? JSONDecoder().decode([ToDoItem].self, from: data) {
+            toDoItems = array
+        }
+        else
+        {
+            toDoItems = []
         }
     }
 }
