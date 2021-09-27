@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A5A6288025BF86D0A28C0E9 /* Pods_toDoListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0654D22FC064B93359067CC1 /* Pods_toDoListTests.framework */; };
-		96F34590E4EF75A013A9238B /* Pods_toDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688C16CD10AB2E47565943D3 /* Pods_toDoList.framework */; };
 		AF79C84326FDB614005D6B54 /* notePersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79C84226FDB614005D6B54 /* notePersonalController.swift */; };
+		AF9341902701DB38003CA781 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93418F2701DB38003CA781 /* ToDoDetailViewController.swift */; };
 		AF9CDC4D26FCB68800199AE2 /* ReOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CDC4C26FCB68800199AE2 /* ReOrderTableViewController.swift */; };
 		AFA6940226FB32E400560D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6940126FB32E400560D8E /* AppDelegate.swift */; };
 		AFA6940426FB32E400560D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6940326FB32E400560D8E /* SceneDelegate.swift */; };
@@ -22,7 +21,6 @@
 		AFA6943226FB342300560D8E /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6943126FB342300560D8E /* ToDoTableViewController.swift */; };
 		AFA6943426FB351100560D8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6943326FB351100560D8E /* Model.swift */; };
 		AFA6943626FB671000560D8E /* ToDoTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6943526FB671000560D8E /* ToDoTableViewDataSource.swift */; };
-		D5F151CA308FA6E776F1C481 /* Pods_toDoList_toDoListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F280D9677CA1BF927D762 /* Pods_toDoList_toDoListUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0654D22FC064B93359067CC1 /* Pods_toDoListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDoListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E76B3B727FBB53C65AF580 /* Pods-toDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList.debug.xcconfig"; path = "Target Support Files/Pods-toDoList/Pods-toDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		18EA257E42641D6E3D4EFAC0 /* Pods-toDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList.release.xcconfig"; path = "Target Support Files/Pods-toDoList/Pods-toDoList.release.xcconfig"; sourceTree = "<group>"; };
-		347F280D9677CA1BF927D762 /* Pods_toDoList_toDoListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDoList_toDoListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		688C16CD10AB2E47565943D3 /* Pods_toDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF79C84226FDB614005D6B54 /* notePersonalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notePersonalController.swift; sourceTree = "<group>"; };
+		AF93418F2701DB38003CA781 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
 		AF9CDC4C26FCB68800199AE2 /* ReOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReOrderTableViewController.swift; sourceTree = "<group>"; };
 		AFA693FE26FB32E400560D8E /* toDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA6940126FB32E400560D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96F34590E4EF75A013A9238B /* Pods_toDoList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5A6288025BF86D0A28C0E9 /* Pods_toDoListTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5F151CA308FA6E776F1C481 /* Pods_toDoList_toDoListUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +95,6 @@
 		99E50EEC0CB5B1D39C0353ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				688C16CD10AB2E47565943D3 /* Pods_toDoList.framework */,
-				347F280D9677CA1BF927D762 /* Pods_toDoList_toDoListUITests.framework */,
-				0654D22FC064B93359067CC1 /* Pods_toDoListTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +127,7 @@
 				AFA6940126FB32E400560D8E /* AppDelegate.swift */,
 				AFA6940326FB32E400560D8E /* SceneDelegate.swift */,
 				AFA6940726FB32E400560D8E /* Main.storyboard */,
+				AF93418F2701DB38003CA781 /* ToDoDetailViewController.swift */,
 				AF9CDC4C26FCB68800199AE2 /* ReOrderTableViewController.swift */,
 				AFA6943526FB671000560D8E /* ToDoTableViewDataSource.swift */,
 				AFA6940A26FB32E500560D8E /* Assets.xcassets */,
@@ -176,7 +167,6 @@
 				E7016AF9869A8F4933021257 /* Pods-toDoListTests.debug.xcconfig */,
 				B6A985B5CAA233D5B339EA96 /* Pods-toDoListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,7 +181,6 @@
 				AFA693FA26FB32E400560D8E /* Sources */,
 				AFA693FB26FB32E400560D8E /* Frameworks */,
 				AFA693FC26FB32E400560D8E /* Resources */,
-				0D7A0A2833C54860176F4C32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,7 +218,6 @@
 				AFA6941A26FB32E600560D8E /* Sources */,
 				AFA6941B26FB32E600560D8E /* Frameworks */,
 				AFA6941C26FB32E600560D8E /* Resources */,
-				5C8AE1803BF21E0FA2A164D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,40 +300,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D7A0A2833C54860176F4C32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDoList/Pods-toDoList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDoList/Pods-toDoList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toDoList/Pods-toDoList-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C8AE1803BF21E0FA2A164D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDoList-toDoListUITests/Pods-toDoList-toDoListUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-toDoList-toDoListUITests/Pods-toDoList-toDoListUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toDoList-toDoListUITests/Pods-toDoList-toDoListUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7520D8D8E424FB75F353B1C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -420,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9CDC4D26FCB68800199AE2 /* ReOrderTableViewController.swift in Sources */,
+				AF9341902701DB38003CA781 /* ToDoDetailViewController.swift in Sources */,
 				AFA6940226FB32E400560D8E /* AppDelegate.swift in Sources */,
 				AFA6943226FB342300560D8E /* ToDoTableViewController.swift in Sources */,
 				AFA6940426FB32E400560D8E /* SceneDelegate.swift in Sources */,

@@ -25,12 +25,9 @@ class ToDoTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func goSecondController(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let notePersonalController  = storyBoard.instantiateViewController(withIdentifier: "goSecondController") as! notePersonalController
-        self.present(notePersonalController, animated: true, completion: nil)
+    @IBAction func exitButton(_ sender: Any) {
+        exit(0)
     }
-    
     
     @IBAction func callNotifications(_ sender: Any) {
         
@@ -68,6 +65,8 @@ class ToDoTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    let cellSpacingHeight: CGFloat = 12
+    
     var toDoItems: [ToDoItem] {
         dataSource.toDoItems
         
@@ -75,7 +74,6 @@ class ToDoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaults.resetStandardUserDefaults()
         dataSource.loadData()
     }
 
@@ -88,18 +86,16 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        dataSource.changeState(at: indexPath.row)
+        //dataSource.changeState(at: indexPath.row)
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = toDoItems[indexPath.row].isCompleted ? .checkmark : .none
+        let item = toDoItems[indexPath.row]
+        cell?.accessoryType = item.isCompleted ? .checkmark : .none
         
-        //переход по ячейке
-       // self.performSegue(withIdentifier: "showInfo", sender: tableView.cellForRow(at: indexPath))
-//        let controller = notePersonalController(nibName: "YourNibName", bundle: nil)
-//        self.present(controller, animated: true){
-//          let destination = notePersonalController()
-//          self.present(destination, animated: true)
-//          self.navigationController?.pushViewController(destination, animated: true)
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ToDoDetailViewController.self)) as! ToDoDetailViewController
+        navigationController?.pushViewController(vc, animated: true)
+        vc.configure(title: item.name)
+    }
 
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -121,7 +117,12 @@ class ToDoTableViewController: UITableViewController {
         
     }
     
+    
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         false
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight;
     }
 }

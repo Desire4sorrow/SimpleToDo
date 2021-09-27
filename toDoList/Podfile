@@ -16,6 +16,5 @@ target 'toDoList' do
     # Pods for testing
   end
 
-  pod 'FSCalendar'
 
 end
